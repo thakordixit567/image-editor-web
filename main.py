@@ -9,6 +9,7 @@ ALLOWED_EXTENSIONS = {'png', 'webp', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.secret_key = 'super secret key'
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def allowed_file(filename):
@@ -70,4 +71,4 @@ def edit():
     return render_template("index.html")
 
 
-app.run(debug=True, port=5001)
+app.run(debug=True,host="0.0.0.0", port=5001)
